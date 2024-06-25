@@ -1,4 +1,4 @@
-MAIN_PACKAGE_PATH := ./
+MAIN_PACKAGE_PATH := ./cmd/bookstore/
 BINARY_NAME := bookstore
 
 # ==================================================================================== #
