@@ -2,6 +2,7 @@ package config
 
 import "github.com/spf13/viper"
 
+// Holds configuration information
 type Config struct {
 	ServerAddress string `mapstructure:"SERVER_ADDRESS"`
 	ServerPort    string `mapstructure:"SERVER_PORT"`
@@ -12,6 +13,7 @@ type Config struct {
 	DBName        string `mapstructure:"DB_NAME"`
 }
 
+// Load configuration from files
 func Load() (*Config, error) {
 	cfg := Config{}
 	viper.SetConfigFile(".env")

@@ -1,5 +1,6 @@
 MAIN_PACKAGE_PATH := ./cmd/bookstore/
 BINARY_NAME := bookstore
+BINARY_OUTPUT := ./bin/${BINARY_NAME}
 
 # ==================================================================================== #
 # HELPERS
@@ -50,7 +51,7 @@ test/cover:
 .PHONY: build
 build:
     # Include additional build steps, like TypeScript, SCSS or Tailwind compilation here...
-	go build -o=/tmp/bin/${BINARY_NAME} ${MAIN_PACKAGE_PATH}
+	go build -o=${BINARY_OUTPUT} ${MAIN_PACKAGE_PATH}
 
 ## run: run the  application
 .PHONY: run

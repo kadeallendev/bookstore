@@ -57,19 +57,3 @@ func main() {
 		log.Fatalln("error shutting down database: ", err)
 	}
 }
-
-// var wg sync.WaitGroup
-// wg.Add(1)
-// go func() {
-// 	defer wg.Done()
-// 	<-ctx.Done()
-// 	// make a new context for the shutdown
-// 	shutdownCtx := context.Background()
-// 	shutdownCtx, cancel := context.WithTimeout(ctx, 10*time.Second)
-// 	defer cancel()
-// 	if err := httpServer.Shutdown(shutdownCtx); err != nil {
-//
-// 		fmt.Fprintf(os.Stderr, "error shutting down http server: %s\n", err)
-// 	}
-// }()
-// wg.Wait()
