@@ -44,7 +44,7 @@ func handleFindBook(libraryStore *datastore.LibraryStore) http.Handler {
 			}
 
 			// Find the book
-			book, err := libraryStore.FindBook(isbn)
+			book, err := libraryStore.GetBook(isbn)
 			if err != nil {
 				// If the book was not found
 				if err == sql.ErrNoRows {
@@ -76,7 +76,7 @@ func handleAllBooks(libraryStore *datastore.LibraryStore) http.Handler {
 			log.Printf("handling all books at %s\n", r.URL.Path)
 
 			// Get all books
-			books, err := libraryStore.AllBooks()
+			books, err := libraryStore.GetAllBooks()
 			if err != nil {
 				log.Println("failed to retreive all books", err)
 				RespondWithError(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)

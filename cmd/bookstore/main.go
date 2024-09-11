@@ -29,7 +29,7 @@ func main() {
 	libraryStore := datastore.NewLibraryStore(libraryDB)
 
 	// Create server
-	srv := server.New(cfg, libraryStore)
+	srv := server.New(cfg, &libraryStore)
 
 	// Run server
 	go func() {
